@@ -37,11 +37,13 @@ def search_by_choseong(filename, query):
 
 if __name__ == "__main__":
     filename = "words.txt"  # 검색할 텍스트 파일
-    query = input("검색할 초성을 입력하세요: ")
-    results = search_by_choseong(filename, query)
-    
-    if results:
-        print("검색 결과:", results)
-    else:
-        print("검색된 단어가 없습니다.")
-
+    while True:
+        query = input("검색할 초성을 입력하세요 (종료하려면 'exit' 입력): ")
+        if query.lower() == 'exit':
+            break
+        results = search_by_choseong(filename, query)
+        
+        if results:
+            print("검색 결과:", results)
+        else:
+            print("검색된 단어가 없습니다.")
